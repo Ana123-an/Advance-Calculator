@@ -1,0 +1,131 @@
+/* Root Variables for Color Palette */
+:root {
+  --primary-bg-light: #87CEEB;      /* Sky Blue */
+  --primary-bg-dark: #4682B4;       /* Dark Sky Blue */
+  --primary-text-light: #333333;    /* Dark text on light bg */
+  --primary-text-dark: #F5F5F5;     /* Light text on dark bg */
+  
+  --button-bg-light: #FFDAB9;       /* Soft Peach */
+  --button-bg-dark: #E8BFA3;        /* Dark Peach */
+  --button-hover-light: #FFE8D5;    /* Lighter peach hover */
+  --button-hover-dark: #F0C8A8;     /* Darker hover in dark mode */
+
+  --accent-color: #FFFFFF;          /* White accent */
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--primary-bg-light);
+  color: var(--primary-text-light);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  color: var(--primary-text-light);
+}
+
+select, button {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: var(--button-bg-light);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed);
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--primary-bg-light);
+}
+
+button:hover {
+  background-color: var(--button-hover-light);
+}
+
+/* Calculator Styles */
+#calculator {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-bg-light);
+}
+
+#display {
+  width: 94%;
+  height: 50px;
+  background-color: #222;
+  color: white;
+  text-align: right;
+  line-height: 50px;
+  font-size: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: var(--border-radius);
+  background-color: var(--button-bg-light);
+  transition: background-color var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--button-hover-light);
+}
+
+/* Light Theme */
+body[data-theme='light'] {
+  background-color: var(--primary-bg-light);
+  color: var(--primary-text-light);
+}
+
+body[data-theme='light'] #calculator {
+  background-color: var(--primary-bg-light);
+}
+
+/* Dark Theme */
+body[data-theme='dark'] {
+  background-color: var(--primary-bg-dark);
+  color: var(--primary-text-dark);
+}
+
+body[data-theme='dark'] #calculator {
+  background-color: var(--primary-bg-dark);
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--primary-text-light);
+}
